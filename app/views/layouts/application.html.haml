@@ -9,7 +9,9 @@
 %body
 	%nav.navbar.navbar-default
 		.container
-			.navbar-brand= link_to "Городские парки", root_path
+			%div{ class: 'navbar-brand' }
+				= link_to root_path do
+					= image_tag 'tree.png', id: 'icon'
 
 			%ul.nav.navbar-nav.navbar-right
 				%li= link_to 'Добавить парк', new_park_path
