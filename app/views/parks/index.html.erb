@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Список парков Краснодара</h1>
+    <ul>
+    <% @parks.each do |park| %>
+        <li><h3><%= link_to park.address, park %><br><small><%= link_to 'Править', edit_park_path(park) %>  <%= link_to 'Удалить', park, method: :delete, data: { confirm: 'Уверен?' } %></small></h3></li>
+    <% end %>
+    </ul>
+<br>
+
