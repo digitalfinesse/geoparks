@@ -1,13 +1,8 @@
 Городские парки (Краснодара) на онлайн карте гугла
 
+Работающее приложение по адресу https://geoparks.herokuapp.com/
+
 Ruby 2.2.2
 
-Использованные гемы: 
-	bootstrap-sass
-	geocoder
-	gmaps4rails
-
-в процессе:
-	haml
-	pg
-	devise
+Использованные гемы: bootstrap-sass, geocoder, gmaps4rails, haml, pg, ckeditor
+В процессе: devise
