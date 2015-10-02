@@ -1,24 +1,28 @@
 %p#notice= notice
 %h1.title Список парков Краснодара
 .row
-  - @parks.each do |park|
-    .col-lg-4.col-md-4.hidden-sm.hidden-xs
-      .map_index
-        .image_wrapper
-          = image_tag "http://maps.google.com/maps/api/staticmap?size=400x200&sensor=false&zoom=16&markers=#{park.latitude}%2C#{park.longitude}", class: "map_image"
-        %h2
-          = link_to park.address, park
+  - @parks.each_slice(3) do |park|
+    - park.each do |p|
+      .col-lg-4.col-md-4.hidden-sm.hidden-xs
+        .map_index
+          .image_wrapper
+            = image_tag "http://maps.google.com/maps/api/staticmap?size=400x200&sensor=false&zoom=16&markers=#{p.latitude}%2C#{p.longitude}", class: "map_image"
+          %h2
+            = link_to p.address, p
+    .clearfix
+  
+  - @parks.each_slice(2) do |park|
+    - park.each do |p|
+      .col-sm-6.hidden-lg.hidden-md.hidden-xs
+        .map_index
+          .image_wrapper
+            = image_tag "http://maps.google.com/maps/api/staticmap?size=400x200&sensor=false&zoom=16&markers=#{p.latitude}%2C#{p.longitude}", class: "map_image"
+          %h2
+            = link_to p.address, p
+    .clearfix
 
   - @parks.each do |park|
-    .col-sm-6.hidden-lg.hidden-md.hidden-xs
-      .map_index
-        .image_wrapper
-          = image_tag "http://maps.google.com/maps/api/staticmap?size=400x200&sensor=false&zoom=16&markers=#{park.latitude}%2C#{park.longitude}", class: "map_image"
-        %h2
-          = link_to park.address, park
-
-  - @parks.each do |park|
-    .col-xs-10.hidden-lg.hidden-md.hidden-ms.col-xs-offset-1
+    .col-xs-10.hidden-lg.hidden-md.hidden-sm.col-xs-offset-1
       .map_index
         .image_wrapper
           = image_tag "http://maps.google.com/maps/api/staticmap?size=400x200&sensor=false&zoom=16&markers=#{park.latitude}%2C#{park.longitude}", class: "map_image"
