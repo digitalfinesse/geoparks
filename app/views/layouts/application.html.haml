@@ -9,9 +9,10 @@
 %body
 	%nav.navbar.navbar-default
 		.container
-			%div{ class: 'navbar-brand' }
-				= link_to root_path do
-					= image_tag 'tree.png', id: 'icon'
+			.navbar-brand
+				%a{:href => "#{root_path}"}
+					%img#icon{:src => asset_path('tree.png')}
+					Городские парки
 
 			%ul.nav.navbar-nav.navbar-right
 				%li= link_to 'Добавить парк', new_park_path
@@ -22,3 +23,5 @@
 			=content_tag :div, msg, class: "alert"
 
 		= yield
+	.container-main
+	.footer

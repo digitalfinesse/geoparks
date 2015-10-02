@@ -1,0 +1,14 @@
+%p#notice= notice
+%h1 Список парков Краснодара
+.row
+  - @parks.each do |park|
+    .col-md-4
+      .map_index
+        .image_wrapper
+          = image_tag "http://maps.google.com/maps/api/staticmap?size=400x200&sensor=false&zoom=16&markers=#{park.latitude}%2C#{park.longitude}", class: "map_image"
+        %h2
+          = link_to park.address, park
+          %br/
+          %small
+            = link_to 'Править', edit_park_path(park)
+            = link_to 'Удалить', park, method: :delete, data: { confirm: 'Уверен?' }
