@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151003003110) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cinemas", force: :cascade do |t|
     t.string   "address"
     t.float    "latitude"
@@ -34,8 +37,8 @@ ActiveRecord::Schema.define(version: 20151003003110) do
     t.datetime "updated_at"
   end
 
-  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
-  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "parks", force: :cascade do |t|
     t.string   "address"
