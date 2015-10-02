@@ -27,3 +27,4 @@ gem 'pg', '~> 0.18.3'
 gem 'devise', '~> 3.5.2'
 gem 'paperclip'
 gem 'ckeditor'
+gem "rails_12factor", group: :production
