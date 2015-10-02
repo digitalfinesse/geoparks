@@ -4,6 +4,7 @@
 	%title Городские Парки
 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+	= javascript_include_tag 'ckeditor/ckeditor.js'
 	= csrf_meta_tags
 	%link{:href => "https://fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,cyrillic", :rel => "stylesheet", :type => "text/css"}/
 
@@ -26,3 +27,13 @@
 		= yield
 	.container-main
 	.footer
+	
+:javascript
+	$(document).ready(function() {
+		if ($('textarea').length > 0) {
+			var data = $('textarea');
+			$.each(data, function(i) {
+				CKEDITOR.replace(data[i].id);
+			});
+		}
+	});
