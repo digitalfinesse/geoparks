@@ -4,7 +4,7 @@ class ParksController < ApplicationController
   # GET /parks
   # GET /parks.json
   def index
-    @parks = Park.all
+    @parks = Park.all.order("updated_at DESC")
   end
 
   # GET /parks/1
@@ -76,6 +76,6 @@ class ParksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def park_params
-      params.require(:park).permit(:address, :latitude, :longitude, :description)
+      params.require(:park).permit(:address, :latitude, :longitude, :description, :title, :country, :city)
     end
 end

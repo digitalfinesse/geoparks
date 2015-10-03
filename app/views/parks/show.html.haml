@@ -2,7 +2,8 @@
 %script{:src => "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", :type => "text/javascript"}
 
 %h2.title
-	= @park.address
+	= @park.title.chomp + ", "
+	= @park.city
 	%a.btn.btn-success{:href => edit_park_path(@park)} Редактировать
 	= link_to "Удалить", park_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"
 

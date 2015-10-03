@@ -9,6 +9,18 @@
           - @park.errors.full_messages.each do |message|
             %li= message
     .field
+      = f.label :title, 'Название места'
+      %br/
+      = f.text_field :title, class: "form-control"
+    .field
+      = f.label :country, 'Страна'
+      %br/
+      = f.text_field :country, class: "form-control"
+    .field
+      = f.label :city, 'Город'
+      %br/
+      = f.text_field :city, class: "form-control"
+    .field
       = f.label :address, 'Адрес и/или название, как на карте'
       %br/
       = f.text_field :address, cols: 30, rows: 3, class: "form-control"
