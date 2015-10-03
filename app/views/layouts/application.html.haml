@@ -1,7 +1,7 @@
 !!! 5
 %html
 %head
-	%title Городские Парки
+	%title Городские Парки и Скверы
 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
 	= javascript_include_tag 'ckeditor/ckeditor.js'
@@ -14,7 +14,7 @@
 			.navbar-brand
 				%a{:href => "#{root_path}"}
 					%img#icon{:src => asset_path('tree.png')}
-					Городские парки
+					ГОРОДСКИЕ ПАРКИ И СКВЕРЫ
 
 			%ul.nav.navbar-nav.navbar-right
 				%li= link_to 'Добавить парк', new_park_path
