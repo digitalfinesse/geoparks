@@ -18,9 +18,9 @@
 @import "bootstrap";
 
 @mixin box-shadow {
-	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
-	-moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
-	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 1px 2px 0;
+	-moz-box-shadow: rgba(0, 0, 0, 0.09) 1px 2px 0;
+	box-shadow: rgba(0, 0, 0, 0.09) 1px 2px 0;
 }
 
 html {
@@ -30,7 +30,7 @@ html {
 }
 
 body {
-	background: #F0F8FF;
+	background: #fff;
 	background-image: url('fon.png');
 	background-attachment: fixed; 
 	height: auto !important;
@@ -40,11 +40,15 @@ body {
 	margin:0;
 	padding:0;
 	font-family: 'Didact Gothic', sans-serif;
+	p {
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 16px;
+	text-indent: 25px;
+}
 }
 
 .main_content {
 	padding: 0 0 50px 0;
-
 }
 
 .container-main {
@@ -88,10 +92,9 @@ body {
 }
 
 .map_index {
-	background: white;
+	background: #fbfbfb;
 	border-radius: 5px;
 	margin-bottom: 20px;
-	
 	@include box-shadow;
 	.image_wrapper {
 		max-width: 100%;
@@ -210,4 +213,5 @@ body {
 
 .adsense {
 	text-align: center;
+	padding-bottom: 15px;
 }

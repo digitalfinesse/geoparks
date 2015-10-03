@@ -28,3 +28,5 @@ gem 'devise', '~> 3.5.2'
 gem 'paperclip'
 gem 'ckeditor'
 gem "rails_12factor", group: :production
+gem 'devise', '~> 3.5.2'
+gem 'pundit', '~> 1.0.1'
