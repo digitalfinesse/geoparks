@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   
-  root 'parks#index'
+  root to: 'parks#index'
 
   resources :parks
 

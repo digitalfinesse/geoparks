@@ -4,8 +4,9 @@
 %h2.title
 	= @park.title.chomp + ", "
 	= @park.city
-	%a.btn.btn-success{:href => edit_park_path(@park)} Редактировать
-	= link_to "Удалить", park_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"
+	- if user_signed_in?
+		%a.btn.btn-success{:href => edit_park_path(@park)} Редактировать
+		= link_to "Удалить", park_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"
 
 .col-lg-8.col-sm-8.col-md-8.col-xs-12
 	#map

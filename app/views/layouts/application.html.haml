@@ -15,10 +15,17 @@
 				%a{:href => "#{root_path}"}
 					%img#icon{:src => asset_path('tree.png')}
 					ГОРОДСКИЕ ПАРКИ И СКВЕРЫ
+					
+			- if user_signed_in?
+				%ul.nav.navbar-nav.navbar-right
+					%li= link_to 'Добавить парк', new_park_path
+					%li= link_to current_user.name, edit_user_registration_path
+					%li= link_to "Выйти", destroy_user_session_path, method: :delete
 
-			%ul.nav.navbar-nav.navbar-right
-				%li= link_to 'Добавить парк', new_park_path
-				%li= link_to current_user.email, ""
+			- else
+				%ul.nav.navbar-nav.navbar-right
+					%li= link_to 'Регистрация', new_user_registration_path
+					%li= link_to 'Войти', new_user_session_path
 
 	.container
 		-flash.each do |name, msg|
