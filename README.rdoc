@@ -5,6 +5,6 @@
 Ruby 2.2.2
 BD PostgreSQL
 
-Использованные гемы: bootstrap-sass, geocoder, gmaps4rails, haml, pg, ckeditor
+Использованные гемы: bootstrap-sass, geocoder, gmaps4rails, haml, pg, ckeditor, devise
 
-В процессе: devise, omniauth
+В процессе: omniauth, pundit
