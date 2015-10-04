@@ -24,7 +24,6 @@ gem 'geocoder'
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'haml', '~> 4.0.7'
 gem 'pg', '~> 0.18.3'
-gem 'devise', '~> 3.5.2'
 gem 'paperclip'
 gem 'ckeditor'
 gem "rails_12factor", group: :production

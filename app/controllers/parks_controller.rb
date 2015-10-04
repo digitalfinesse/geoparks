@@ -31,7 +31,7 @@ class ParksController < ApplicationController
   # POST /parks
   # POST /parks.json
   def create
-    @park = Park.new(park_params)
+    @park = current_user.parks.build(park_params)
 
     respond_to do |format|
       if @park.save

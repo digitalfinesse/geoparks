@@ -18,7 +18,7 @@
 
 			%ul.nav.navbar-nav.navbar-right
 				%li= link_to 'Добавить парк', new_park_path
-				%li= link_to 'Войти', ""
+				%li= link_to current_user.email, ""
 
 	.container
 		-flash.each do |name, msg|
