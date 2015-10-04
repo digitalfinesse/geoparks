@@ -36,6 +36,6 @@
       = f.label :description, 'Описание места'
       %br/
       = f.text_area :description, cols: 30, rows: 10, class: "form-control"
-    .actions
-      = link_to 'Вернуться', parks_path, class: "btn btn-danger"
+    .actions.title
+      = link_to 'Вернуться без сохранения', parks_path, class: "btn btn-danger"
       = f.submit 'Сохранить страницу парка', class: "btn btn-success"

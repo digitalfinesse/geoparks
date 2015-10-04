@@ -1,4 +1,4 @@
-%h1.title Парки и скверы Краснодара
+%h1.title Парки и скверы города
 .row
   - @parks.each_slice(3) do |park|
     - park.each do |p|
@@ -7,7 +7,7 @@
           .image_wrapper
             = image_tag "http://maps.google.com/maps/api/staticmap?size=400x200&sensor=false&zoom=16&markers=#{p.latitude}%2C#{p.longitude}", class: "map_image"
           %h2
-            = link_to p.title, p
+            = link_to p.title + ", " + p.city, p, 'data-no-turbolink' => true
     .clearfix
   
   - @parks.each_slice(2) do |park|
@@ -17,7 +17,7 @@
           .image_wrapper
             = image_tag "http://maps.google.com/maps/api/staticmap?size=400x200&sensor=false&zoom=16&markers=#{p.latitude}%2C#{p.longitude}", class: "map_image"
           %h2
-            = link_to p.title, p
+            = link_to p.title, p, 'data-no-turbolink' => true
     .clearfix
 
   - @parks.each do |park|
@@ -26,4 +26,4 @@
         .image_wrapper
           = image_tag "http://maps.google.com/maps/api/staticmap?size=400x200&sensor=false&zoom=16&markers=#{park.latitude}%2C#{park.longitude}", class: "map_image"
         %h2
-          = link_to park.title, park
+          = link_to park.title, p, 'data-no-turbolink' => true
