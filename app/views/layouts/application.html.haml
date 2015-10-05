@@ -10,22 +10,28 @@
 
 %body
 	%nav.navbar.navbar-default
-		.container
-			.navbar-brand
+		.container.topnav
+			.navbar-brand.topnav
 				%a{:href => "#{root_path}"}
 					%img#icon{:src => asset_path('tree.png')}
-					ГОРОДСКИЕ ПАРКИ И СКВЕРЫ
-					
-			- if user_signed_in?
-				%ul.nav.navbar-nav.navbar-right
-					%li= link_to 'Добавить парк', new_park_path
-					%li= link_to current_user.name, edit_user_registration_path
-					%li= link_to "Выйти", destroy_user_session_path, method: :delete
+					ПАРКИ И СКВЕРЫ
+			.navbar-header
+				%button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+					%span.sr-only Навигация
+					%span.icon-bar
+					%span.icon-bar
+					%span.icon-bar
+			#bs-example-navbar-collapse-1.collapse.navbar-collapse	
+				- if user_signed_in?
+					%ul.nav.navbar-nav.navbar-right.al-right
+						%li= link_to 'Добавить парк', new_park_path
+						%li= link_to current_user.name, edit_user_registration_path
+						%li= link_to "Выйти", destroy_user_session_path, method: :delete
 
-			- else
-				%ul.nav.navbar-nav.navbar-right
-					%li= link_to 'Регистрация', new_user_registration_path
-					%li= link_to 'Войти', new_user_session_path
+				- else
+					%ul.nav.navbar-nav.navbar-right.al-right
+						%li= link_to 'Регистрация', new_user_registration_path
+						%li= link_to 'Войти', new_user_session_path
 
 	.container
 		-flash.each do |name, msg|
