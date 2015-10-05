@@ -1,4 +1,4 @@
-%h1.title Парки и скверы города
+%h1.title Парки и скверы городов
 .row
   - @parks.each_slice(3) do |park|
     - park.each do |p|
@@ -27,3 +27,4 @@
           = image_tag "http://maps.google.com/maps/api/staticmap?size=400x200&sensor=false&zoom=16&markers=#{park.latitude}%2C#{park.longitude}", class: "map_image"
         %h2
           = link_to park.title, park, 'data-no-turbolink' => true
+
