@@ -2,9 +2,10 @@
 
 Работающее приложение по адресу https://geoparks.herokuapp.com/
 
+Можно посмотреть админку - login: demonastration@demo.ru, pw: 12345678
+
 Ruby 2.2.2
-BD PostgreSQL
+
+PostgreSQL
 
 Использованные гемы: bootstrap-sass, geocoder, gmaps4rails, haml, pg, ckeditor, devise
-
-В процессе: omniauth, pundit
